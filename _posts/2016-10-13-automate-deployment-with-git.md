@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Automate Deployment
+title: Automate Deployment with Git
 ---
 # How to automate deployment with git
 
