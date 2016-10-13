@@ -1,0 +1,21 @@
+Download sogou from here:
+http://pinyin.sogou.com/linux/help.php
+
+install it with 
+sudo dpkg -i <name_of_file>.deb
+sudo apt -f install
+
+Then you need to add the sogou input method. 
+
+To do this, click on the keyboard icon in the system tray. You'll see two chinese options. Click the lower one. This will bring up an input method configuration dialog. On the input method tab, click the plus to add a method. Then uncheck the Only show current language checkbox. Scroll right to the end and then add the sogou pinyin input method and click ok.
+
+If you want to change the input trigger, go to the second tab, Global config and set the trigger to switch the input method. I find that ctrl space gets hit too often when editing files in vim, so I choose Alt+ESC
+
+Then just close the dialog. If it doesn't work immediately, log out and log back in and it should work.
+
+ 
+http://ubuntuhandbook.org/index.php/2016/07/2-best-chinese-pinyin-im-ubuntu-16-04/
+
+This site might be useful too:
+http://m.blog.csdn.net/article/details?id=51464105:w
+
