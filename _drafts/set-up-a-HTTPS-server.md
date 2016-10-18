@@ -3,7 +3,7 @@ layout: default
 title: Set up an HTTPS Server
 ---
 # Set up an HTTPS Server
-This is a quick how-to about setting up a HTTPS server for SSL connections utilising the free certbot tool by the Electronic Frontier Foundation. You should be able to follow this guide as is if using nginx as your webserver on a ubuntu machine. I make no claims or guarantees about the security, usefulness or reliability of the guide, it is merely what worked for me and could be a useful starting point.
+This is a quick how-to about setting up a HTTPS server for SSL connections utilising the free certbot tool by the Electronic Frontier Foundation. You should be able to follow this guide as is if using nginx as your webserver to serve PHP7 from a ubuntu machine. I make no claims or guarantees about the security, usefulness or reliability of the guide, it is merely what worked for me and could be a useful starting point.
 
 The starting point for this guide is that you have nginx installed on a ubuntu machine and that you are serving a website through a custom domain. Then you are ready to serve your website securely using encryption. Let's get started.
 
@@ -45,7 +45,7 @@ You should see that version 1.0.2 or later has been installed.
 ## Configure Nginx for HTTPS
 Configure your server blocks to listen for https connections.
 
-Fully configuring nginx server blocks is beyond the scope of this post, but here's what you need to do to get going.[^5]<sup>,</sup>[^6]
+Fully configuring nginx server blocks is beyond the scope of this post, but here's what you need to do to get going.[^5]<sup>,</sup>[^6]. Modify your server config found at `/etc/nginx/sites-available/example.com.au.conf` to look like the following.
 
     server {
             # Listen on the standard port for SSL connections, we can rely on nginx's defaults here
@@ -58,12 +58,12 @@ Fully configuring nginx server blocks is beyond the scope of this post, but here
             ssl_certificate /etc/letsencrypt/live/example.com.au/fullchain.pem;
             ssl_certificate_key /etc/letsencrypt/live/example.com.au/privkey.pem;
 
-            # List the domains that resolve here
+            # List the domains that resolve here.
             # Enter the custom domains that you have registered.
             server_name example.com.au www.example.com.au;
 
             # Specify the directory where files will be served from
-            root /var/www/live/public;
+            root /var/www/example.com.au/public;
             index index.php index.html index.htm;
 
 
@@ -81,19 +81,20 @@ Fully configuring nginx server blocks is beyond the scope of this post, but here
             }
     }
 
-Finally
-Configure Nginx to always use https.
-http://www.cyberciti.biz/faq/linux-unix-nginx-redirect-all-http-to-https/
-# Http server redirects all request to secure server
-server {
-        listen 80;
-        listen [::]:80 ipv6only=on default_server;
+## Configure Nginx to always use https.[^7]
+By modifying your nginx server block you can automatically redirect all HTTP requests to use
+the secure HTTPS connection.
 
-        server_name plannd.com.au www.plannd.com.au;
-        rewrite ^ https://$server_name$request_uri? permanent;
-}
+    server {
+            listen 80;
+            listen [::]:80 ipv6only=on default_server;
 
-Do this for as many server blocks as you use. Keep in mind the resources used to serve each one, so that you don't overload your server.
+            server_name example.com.au www.example.com.au;
+            rewrite ^ https://$server_name$request_uri? permanent;
+    }
+
+Do this for as many domains as you use. Keep in mind the resources used to serve each one, so that you don't overload your server.
+Now you and your site visitors can enjoy an extra level of security. Happy HTTPS.
 
 ### References
 [^1]: [Getting started with Let's Encrypt](https://letsencrypt.org/getting-started/)
@@ -102,3 +103,4 @@ Do this for as many server blocks as you use. Keep in mind the resources used to
 [^4]: [Alex Bouma - Nginx with OpenSSL](http://alex.bouma.me/recompile-nginx-with-openssl-1-0-2-for-http-2-via-alpn-ubuntu-14-04/)
 [^5]: [Nginx - Beginner's guide](http://nginx.org/en/docs/beginners_guide.html)
 [^6]: [Nginx - SSL Certificate](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate)
+[^7]: [nixCraft - Redirect HTTP to HTTPS](http://www.cyberciti.biz/faq/linux-unix-nginx-redirect-all-http-to-https/)
