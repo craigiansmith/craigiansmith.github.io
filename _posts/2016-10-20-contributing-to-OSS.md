@@ -7,11 +7,11 @@ title: Contributing to OSS
 
 I have a confession to make: I'm an OSS junkie. For a long time I have admired the efforts and ingenuity of Open Source contributors and enjoyed the work that they have produced. There are way too many useful OSS products to list them here, from databases, to programming languages, to CRM systems, terminals, and complete operating systems. It is super-impressive. It is easy to benefit from the efforts of the open source community, but how to give back to it? How to get involved contributing?
 
-There are lots of OSS projects, and they all depend on the efforts of the community to create software code, documentation, marketing materials, and new directions to try. Despite this evident need for community input, I personally have found it difficult to find the time to contribute to OSS. To overcome the resistance to contributing is the purpose of this post. Giving a public account of an effort to contribute and the journey involved.
+There are lots of OSS projects, and they all depend on the efforts of the community to create software code, documentation, marketing materials, and new directions to try. Despite this evident need for community input, I personally have found it difficult to find the time to contribute to OSS. To overcome the resistance to contributing is the purpose of this post; giving a public account of an effort to contribute and the journey involved.
 
 ## Choosing a project
 
-The popular wisdom about choosing a project to contribute to is to find something that you use and appreciate, and would like to improve. Of course, it helps if the project is geared towards onboarding new contributors. One such project is the Electronic frontier Foundation's Certbot program. It's supremely useful for securing web traffic using SSL, it's got great documentation, and it's on github so it will feel good to make commits seeing all those little green squares in the contribution history. 
+The popular wisdom about choosing a project to contribute to is to find something that you use and appreciate, and would like to improve. Of course, it helps if the project is geared towards onboarding new contributors. One such project is the Electronic frontier Foundation's Certbot program. It's supremely useful for securing web traffic using SSL, it's got great documentation, and it's on github so it will feel good to make commits seeing all those little green squares in the contribution history. Also it's pretty new and did I say useful?
 
 ## Get set up
 
