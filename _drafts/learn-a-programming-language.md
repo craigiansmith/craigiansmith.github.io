@@ -210,4 +210,5 @@ available to the calling script. The source file doesn't need to be executable.
 
 [^1]: [Dash shell on ubuntu](https://wiki.ubuntu.com/DashAsBinSh)
 [^2]: [Classic Shell Scripting](amazon.com)
-[Bash Guide for Beginners](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_02.html)
+[Bash Guide for Beginners](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
+[Gnu Bash guide](https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents)
