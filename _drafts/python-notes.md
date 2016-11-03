@@ -36,3 +36,23 @@ first, and return in the _reverse_ of the MRO. Similar to a recursive function.
 It is briefly discussed in the (Python tutorial)[https://docs.python.org/2/tutorial/classes.html#multiple-inheritance],
 and the BDFL wrote up an (informative post)[http://python-history.blogspot.com.au/2010/06/method-resolution-order.html] 
 about how the MRO was introduced.
+
+## Adding a method to an existing class
+
+It is very simple to add or replace methods on existing classes. Simply define
+the method and then assign the method to an attribute on the class object. It
+is possible to pass self to the new method since it is being bound to the class
+object.
+
+You can also add methods to instance objects in the same way, however `self` 
+won't be passed to that method and the interpreter will complain if the method
+expects it.
+
+## Iterating over a dict
+
+To extract keys and values from a dict in Python 2.7 you can use:
+
+    for key, value in my_dict.iteritems():
+        print "My {} is {}".format(key, value)
+
+In Python 3 that becomes `my_dict.items()`.
