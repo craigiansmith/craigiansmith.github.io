@@ -56,3 +56,44 @@ To extract keys and values from a dict in Python 2.7 you can use:
         print "My {} is {}".format(key, value)
 
 In Python 3 that becomes `my_dict.items()`.
+
+## Find all methods on an object 
+
+Use `[method for method in dir(object) if callable(getattr(object, method))]`.
+
+## Doctest
+Can embed a test in a docstring.
+
+    """
+    >>> print method_to_test(arg)
+    expected_value
+    """
+
+    import doctest
+    doctest.testmod(module_with_doctests_to_run)
+
+
+## Timer
+
+Can test out the performance of commands using the Timer module. 
+    
+    from timeit import Timer
+    results_deque = []
+    >>> for i in range(50):
+    ...     results_deque.append(Timer('d.append(5); d.append(6); d.append(7)',\
+    'from collections import deque; d = deque([1,2,3])').timeit())
+    avg_deque = sum(results_deque) / len(results_deque)
+
+
+## Getting the name of a method or class object
+
+You can get the name by using `ClassName.__name__`. Similarly, if you want the
+name of a method of a class instance you can do `class_instance.my_method.__name__`.
+However, you can't use `.__name__` on an instance object.
+
+New style classes (created with the `class ClassName(object)` statement), pass
+`object` as a parent. This enables a couple of features missing from classic
+classes. First, the new style class is actually a type. Any instances created
+from it will reveal their type as being the class object that they were created
+from. Secondly, new style classes can call 
+`super(ClassName, self).method_on_ancestor()`.
