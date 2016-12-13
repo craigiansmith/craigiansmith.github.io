@@ -46,7 +46,7 @@ Now I can run the script with `./hello.sh`
 
 To assign variables in a shell script like so: `variable=value`. This can be done multiple times on one line. Make sure there are no spaces around the equals sign, and if your value is a string with spaces in it, surround it with quotation marks.
 
-    var2="Some string with spaces"
+    var2="A string with spaces"
 
 To then refer to the value use a `$` like `$var2` to access the string we stored earlier.
 
@@ -67,6 +67,7 @@ Or you can use `=` instead of `-` to set the `$empty_var`.
 `$-` is the options passed to the shell on invocation (not the script when it is called).
 `$@` contains all the command line arguments as separate strings. To access them, wrap it in double quotes.
 `$\*` contains all the command line arguments as a single string.
+`$!` contains the process ID of the previous command.
 
 ##### Variable operators
 
