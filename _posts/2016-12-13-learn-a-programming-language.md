@@ -208,6 +208,7 @@ Quoting with '' to prevent substitution, or with "" to preserve whitespace.
 
 Sourcing a file full of functions with `. filename` will make the functions 
 available to the calling script. The source file doesn't need to be executable.
+
 ## References
 
 [^1]: [Dash shell on ubuntu](https://wiki.ubuntu.com/DashAsBinSh)
