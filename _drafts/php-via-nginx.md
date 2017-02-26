@@ -80,6 +80,12 @@ Then add the following code to a new site config file:
         }
     }
 
+## Create a sym link to the nginx config
+
+Do `sudo ln -s /etc/nginx/sites-available/practice
+/etc/nginx/sites-enabled/practice` and then `sudo service nginx reload`. To hook
+up your new nginx config.
+
 ## Success!
 
 Visit practice.local in the browser should show the Php info page.
