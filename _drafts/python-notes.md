@@ -97,3 +97,9 @@ classes. First, the new style class is actually a type. Any instances created
 from it will reveal their type as being the class object that they were created
 from. Secondly, new style classes can call 
 `super(ClassName, self).method_on_ancestor()`.
+
+# Differences between 2.X and 3.X
+
+Iterator protocol widely used in 3.X
+New style classes used in 3.X
+Unicode handled differently
