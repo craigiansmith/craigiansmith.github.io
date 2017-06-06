@@ -1,0 +1,36 @@
+# How to set up a Vagrant box
+
+I was homeless once or twice, and sleeping amidst boxes is the bomb. You don't 
+want them formed into their box shape though, you need them layered above to keep
+you warm, and beneath to keep you comfortable. In fact, if you're blessed to 
+have a sleeping bag it's even better. But if there are mozzies about, each 
+pin prick extraction of blood will pierce your soul and increase the agony of
+destitution.
+
+Making a Vagrant box is much easier than being a vagrant sleeping on boxes.
+
+This how to guide is for setting up a Vagrant base box on a Ubuntu host. You
+can do the same thing on other OS's but the commands will be different. If you
+are on Ubuntu, you can simply follow along.
+
+First up, why bother? 
+
+There are plenty of Vagrant boxes out there, you can simply search for one that
+meets your use case and download it. However, in some cases you might find that
+the available boxes have installed software that you don't want, or they don't
+have quite all that you do want. In the latter case, you can apply some of these
+same steps to create your own box based on another base box.
+
+For this how to guide I will focus on the specific use case of setting up a dev
+box for designing drupal sites. I want to be able to start the VM and visit the
+site in my browser. In a later post we will cover the additional step of deploying
+the code using Vagrant push.
+
+Let's get our codebase started. Download the latest Drupal version and unpack it
+into a folder with a meaningful name for your site.
+
+    wget https://ftp.drupal.org/files/projects/drupal-8.3.2.tar.gz
+    tar xfzv drupal-8.3.2.tar.gz
+    mv drupal-8.3.2.tar.gz my-site
+
+Remember, you can press tab after entering part of the file name to save time.
