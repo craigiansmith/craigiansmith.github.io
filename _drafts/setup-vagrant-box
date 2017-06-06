@@ -89,3 +89,9 @@ box with
 Now go to another directory and try it out with:
 
     vagrant init LEMP
+
+###### References
+
+http://aruizca.com/steps-to-create-a-vagrant-base-box-with-ubuntu-14-04-desktop-gui-and-virtualbox/
+https://www.vagrantup.com/docs/virtualbox/boxes.html
+https://www.vagrantup.com/docs/boxes/base.html
