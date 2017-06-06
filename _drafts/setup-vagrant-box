@@ -11,7 +11,8 @@ Making a Vagrant box is much easier than being a vagrant sleeping on boxes.
 
 This how to guide is for setting up a Vagrant base box on a Ubuntu host. You
 can do the same thing on other OS's but the commands will be different. If you
-are on Ubuntu, you can simply follow along.
+are on Ubuntu, you can simply follow along. This assumes that you have Vagrant 
+installed, along with virtualisation software, such as VirtualBox.
 
 First up, why bother? 
 
@@ -19,7 +20,11 @@ There are plenty of Vagrant boxes out there, you can simply search for one that
 meets your use case and download it. However, in some cases you might find that
 the available boxes have installed software that you don't want, or they don't
 have quite all that you do want. In the latter case, you can apply some of these
-same steps to create your own box based on another base box.
+same steps to create your own box based on another base box. Then you have the 
+flexibility to be able to create exactly the set of tools for each project or
+type of project and you can enjoy the separation of concerns by keeping your
+host system relatively free of whimsical installs. Simply spin up a VM to try 
+something out.
 
 For this how to guide I will focus on the specific use case of setting up a dev
 box for designing drupal sites. I want to be able to start the VM and visit the
@@ -34,3 +39,53 @@ into a folder with a meaningful name for your site.
     mv drupal-8.3.2.tar.gz my-site
 
 Remember, you can press tab after entering part of the file name to save time.
+
+Next, initialize the Vagrant environment. From within the site directory, at the
+top level, run:
+
+    vagrant init
+
+This will create a Vagrantfile for you. The next step is a couple on minor 
+configuration changes that will have a big effect. First, we specify the box
+to base it on, in this case I am opting for a recent version of Ubuntu.
+
+    config.vm.box = "ubuntu/xenial64"
+
+There are several ways to see what is being served from your Vagrant VM. In this
+case we will set up a private network accessible only from the host computer. 
+To do this just uncomment the following line:
+    
+    config.vm.network "private_network", ip: "192.168.33.10"
+
+After you have saved those changes, in the same directory as the Vagrantfile, run:
+
+    vagrant up
+
+Now let's get into the Vagrant box and install the dependencies required for drupal.
+
+    vagrant ssh
+    sudo apt-get install php7.0 php7.0-fpm php7.0-mcrypt nginx mysql-client mysql-server
+
+The last step is to package a new Vagrant base box from the VM. We will need to
+know the name of the Virtualbox VM we are packaging. This can be found by running
+
+    virtualbox &
+    
+This will launch virtualbox and you can see which VM is running. Then run
+
+    vagrant package --base <Virtualbox VM name> --output <Chosen name>
+    
+I ran:
+
+    vagrant package --base my-site_default_123983453 --output LEMP
+
+This will output a file called "LEMP" to your current directory. Now install the
+box with
+
+    vagrant box add <Box name> <File name>
+
+    vagrant box add LEMP LEMP
+
+Now go to another directory and try it out with:
+
+    vagrant init LEMP
