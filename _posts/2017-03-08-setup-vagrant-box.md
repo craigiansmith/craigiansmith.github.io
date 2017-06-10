@@ -1,5 +1,12 @@
 # How to set up a Vagrant box
 
+Add note to consider looking for a set up LEMP box.
+Consider using a provisioning script to setup a LEMP box.
+Build your own LEMP box
+Look at how to create a vagrant password logon for the box
+
+
+
 I was homeless once or twice, and sleeping amidst boxes is the bomb. You don't 
 want them formed into their box shape though, you need them layered above to keep
 you warm, and beneath to keep you comfortable. In fact, if you're blessed to 
@@ -31,14 +38,6 @@ box for designing drupal sites. I want to be able to start the VM and visit the
 site in my browser. In a later post we will cover the additional step of deploying
 the code using Vagrant push.
 
-Let's get our codebase started. Download the latest Drupal version and unpack it
-into a folder with a meaningful name for your site.
-
-    wget https://ftp.drupal.org/files/projects/drupal-8.3.2.tar.gz
-    tar xfzv drupal-8.3.2.tar.gz
-    mv drupal-8.3.2.tar.gz my-site
-
-Remember, you can press tab after entering part of the file name to save time.
 
 Next, initialize the Vagrant environment. From within the site directory, at the
 top level, run:
@@ -66,6 +65,27 @@ Now let's get into the Vagrant box and install the dependencies required for dru
     vagrant ssh
     sudo apt-get install php7.0 php7.0-fpm php7.0-mcrypt nginx mysql-client mysql-server
 
+You will probably need to recreate the vagrant user and give them sudo power, at 
+least I did.
+
+    sudo su -
+    useradd vagrant
+    visudo
+
+Add "vagrant ALL=(ALL) NOPASSWD:ALL" to the end of the /etc/sudoers.tmp file and
+save it.
+
+Now set up ssh access using the insecure keypair for public access to the box. If
+you want a secure box, create your own keypair. You can install the insecure 
+keypair with the following commands:[^1]
+
+    cd /home/vagrant
+    mkdir .ssh
+    wget --no-check-certificate https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub -O .ssh/authorized_keys
+    chmod 700 .ssh
+    chmod 600 .ssh/authorized_keys
+    chown -R vagrant .ssh
+
 The last step is to package a new Vagrant base box from the VM. We will need to
 know the name of the Virtualbox VM we are packaging. This can be found by running
 
@@ -77,14 +97,14 @@ This will launch virtualbox and you can see which VM is running. Then run
     
 I ran:
 
-    vagrant package --base my-site_default_123983453 --output LEMP
+    vagrant package --base my-site_default_123983453 --output LEMP.box
 
 This will output a file called "LEMP" to your current directory. Now install the
 box with
 
     vagrant box add <Box name> <File name>
 
-    vagrant box add LEMP LEMP
+    vagrant box add LEMP LEMP.box
 
 Now go to another directory and try it out with:
 
@@ -92,6 +112,6 @@ Now go to another directory and try it out with:
 
 ###### References
 
-http://aruizca.com/steps-to-create-a-vagrant-base-box-with-ubuntu-14-04-desktop-gui-and-virtualbox/
-https://www.vagrantup.com/docs/virtualbox/boxes.html
-https://www.vagrantup.com/docs/boxes/base.html
+[^1]: [Blog post by Angel Ruiz](http://aruizca.com/steps-to-create-a-vagrant-base-box-with-ubuntu-14-04-desktop-gui-and-virtualbox/)
+[^2]: [Vagrant docs](https://www.vagrantup.com/docs/virtualbox/boxes.html)
+[^3]: [Vagrant docs](https://www.vagrantup.com/docs/boxes/base.html)
