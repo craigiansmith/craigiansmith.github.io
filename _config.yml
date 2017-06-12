@@ -1,2 +1,5 @@
-name: Craig Smith
+name: "Craig Smith"
 markdown: kramdown
+repository: "dashaxiong/dashaxiong.github.io"
+title: "Craig's Tech Blog"
+description: "Blog posts about computer science technology and software development"
