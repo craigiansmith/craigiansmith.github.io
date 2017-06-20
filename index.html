@@ -6,3 +6,9 @@ title: Craig's Tech Blog
 	<h1>Welcome to Craig's Tech Blog</h1>
 	<p>Just a record of some how to's and a guide to some common solutions. Check in every so often to see if there are any new posts</p>
 <!-- /.blurb -->
+	<ul class="posts">
+	
+	{% for post in site.posts %}
+	  <li><a href="{{ post.url }}" title="{{ post.title }}"> {{ post.title }}</a></li>
+	{% endfor %}
+	</ul>
