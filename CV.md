@@ -2,27 +2,22 @@
 layout: default
 title: Craig's CV
 permalink: CV/
+custom_css: CV.css
 ---
 
 # Craig Smith | CV
 
-Coder, Singer, Artist
+Coder, Technician
 
-## Objectives
-
-Code some software
-
-Build some technology
-
-Learn about doing business
-
-## Professional Experience
+## Synopsis
 
 Trained in Computer Science, I enjoy developing software and tackling technical
 challenges.
 
-### IT Technician @ BIZCOM
-(2017)
+## Professional Experience
+
+### IT Technician @ BIZCOM  {#emp}
+<div class="year"><p>(2017)</p></div>
 
 Wide ranging scope of responsibilities from system administration to hardware
 installation, invoicing, and customer relationship management.
@@ -34,8 +29,8 @@ installation, invoicing, and customer relationship management.
 - Network troubleshooting
 - Hardware repairs for laptops and desktops
 
-### IT Coordinator @ Araluen Christian College
-(2016)
+### IT Coordinator @ Araluen Christian College {#emp}
+<div class="year"><p>(2016)</p></div>
 
 Work remotely with our IT team to provide IT support to a local school.
 
@@ -43,8 +38,8 @@ Work remotely with our IT team to provide IT support to a local school.
 - Administer Windows 8 machines
 - Liase with external contractors 
 
-### CRM Developer @ Community Data Solutions
-(2014 - 2015)
+### CRM Developer @ Community Data Solutions {#emp}
+<div class="year"><p>(2014 - 2015)</p></div>
 
 Craft CRM solutions tailor made for specific business use cases.
 
@@ -55,14 +50,14 @@ Craft CRM solutions tailor made for specific business use cases.
 ## Qualifications
 
 ### Graduate Diploma in Computer Science @ The University of Adelaide
-(2012 - 2013)
+<div class="year"><p>(2012 - 2013)</p></div>
 
 ### Bachelor of Fine Arts @ The National Art School
-(2008 - 2010)
+<div class="year"><p>(2008 - 2010)</p></div>
 Major in oil painting
 
 ### Bachelor of Arts (Honours) @ Macquarie University
-(2002 - 2006)
+<div class="year"><p>(2002 - 2006)</p></div>
 Major in philosophy
 
 _underline_
