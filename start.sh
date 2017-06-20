@@ -1,4 +1,5 @@
 docker run \
     -v "$PWD":/usr/src/app \
-    -e JEKYLL_GITHUB_TOKEN="$JEKYLL_GITHUB_TOKEN" \
-    -p "4000:4000" starefossen/github-pages
+    -w /usr/src/app \
+    -e JEKYLL_GITHUB_TOKEN="$JGT" \
+    -p "4000:4000" starefossen/github-pages \
