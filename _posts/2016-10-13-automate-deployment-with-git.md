@@ -10,7 +10,7 @@ This is a brief method for setting up automated deployment from a local ubuntu b
 
 Set up an ssh identity for the server that you will push to.[^1]
 
-Create ~/.ssh/config so that it looks like this:
+Create `~/.ssh/config` so that it looks like this:
 When you see <name> replace the whole thing with the correct name.
 
     Host <name of identity>

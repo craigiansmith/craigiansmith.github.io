@@ -1,3 +1,8 @@
+:root {
+    --headings: 'Josefin Sans', sans-serif;
+    --paras: 'Merriweather', serif;
+}
+
 body {
     margin: 60px auto;
     width: 70%;
@@ -21,12 +26,17 @@ a:hover {
 }
 h1 {
     font-size: 3em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--headings);
+}
+
 p {
     font-size: 1.5em;
     line-height: 1.4em;
     color: #333;
+    font-family: var(--paras);
 }
 footer {
     border-top: 1px solid #d5d5d5;
