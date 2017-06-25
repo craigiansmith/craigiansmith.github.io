@@ -6,6 +6,20 @@
     font-family: var(--headings);
 }
 
+#roles {
+    border-bottom: 1px #888 solid;
+}
+
+h2 {
+    margin-top: 2em;
+    border-bottom: 1px #888 solid;
+}
+
+#synopsis {
+    border-bottom: none;
+    margin-top: .7em;
+}
+
 p {
     margin: 0px;
     font-family: var(--paras);
