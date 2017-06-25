@@ -99,16 +99,16 @@ also studied Ancient Greek Drama.
 
 ### Csound
 
-Novice at Csound writing scores and instruments to play from my laptop 
+Novice at Csound writing [scores and instruments](https://github.com/dashaxiong/songs) to play from my laptop 
 running a low-latency Linux kernel.
 
 ### Singing
 
 Working my way through a glorious songbook, remembering the verses and conjuring
-up tunes to sing with. Undertaking some study of musicianship in my spare time, 
-learning things like tonal harmony, counterpoint and the mathematics in music.
+up tunes to [sing](https://soundcloud.com/candlestick-one) with. 
 
 ### Text processing
 
-Writing sed and awk scripts to transform historical texts into <span class="latex">L<sup>a</sup>T<sub>e</sub>x</span> 
-files that can then produce beautiful PDFs.
+Writing shell scripts utilising sed to transform [historical texts](https://github.com/dashaxiong/the_preserved_word) 
+into <span class="latex">L<sup>a</sup>T<sub>e</sub>x</span> files that can then 
+produce beautiful PDFs.
