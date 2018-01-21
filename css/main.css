@@ -24,6 +24,10 @@ a {
 a:hover {
     text-decoration: underline;
 }
+header{
+    text-align: center;
+}
+
 h1 {
     font-size: 3em;
 }
@@ -52,4 +56,9 @@ ul.posts li {
     background-color: #ededed;
     list-style: none;
     margin: .5em;
+}
+.top {
+}
+.container {
+    width: 100%;
 }
