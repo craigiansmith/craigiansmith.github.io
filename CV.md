@@ -18,7 +18,7 @@ challenges.
 
 ### Certbot by Electronic Frontier Foundation
 
-I have made several [commits](https://github.com/certbot/certbot/commits?author=dashaxiong) 
+I have made several commits 
 to the Certbot codebase using Object Oriented Python code that works across
 versions from 2.7 - 3.6. I have also contributed Bourne Shell script for managing
 the integration testing. 
@@ -97,18 +97,8 @@ also studied Ancient Greek Drama.
 
 ## Hobbies
 
-### Csound
-
-Novice at Csound writing [scores and instruments](https://github.com/dashaxiong/songs) to play from my laptop 
-running a low-latency Linux kernel.
-
-### Singing
-
-Working my way through a glorious songbook, remembering the verses and conjuring
-up tunes to [sing](https://soundcloud.com/candlestick-one) with. 
-
 ### Text processing
 
-Writing shell scripts utilising sed to transform [historical texts](https://github.com/dashaxiong/the_preserved_word) 
+Writing shell scripts utilising sed to transform [historical texts](https://github.com/craigiansmith/the_preserved_word) 
 into <span class="latex">L<sup>a</sup>T<sub>e</sub>x</span> files that can then 
 produce beautiful PDFs.
